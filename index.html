@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <style>
+    .choice {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rock Paper Scissors</h1>
+  
+  <div>
+    <p>Select your move:</p>
+    <div class="choice" onclick="play('rock')">Rock</div>
+    <div class="choice" onclick="play('paper')">Paper</div>
+    <div class="choice" onclick="play('scissors')">Scissors</div>
+  </div>
+  
+  <script>
+    function play(userChoice) {
+      var computerChoice = getComputerChoice();
+      var result = determineWinner(userChoice, computerChoice);
+      
+      alert("You chose: " + userChoice + "\nComputer chose: " + computerChoice + "\n\n" + result);
+    }
+    
+    function getComputerChoice() {
+      var choices = ['rock', 'paper', 'scissors'];
+      var randomIndex = Math.floor(Math.random() * 3);
+      return choices[randomIndex];
+    }
+    
+    function determineWinner(userChoice, computerChoice) {
+      if (userChoice === computerChoice) {
+        return "It's a tie!";
+      } else if (
+        (userChoice === 'rock' && computerChoice === 'scissors') ||
+        (userChoice === 'paper' && computerChoice === 'rock') ||
+        (userChoice === 'scissors' && computerChoice === 'paper')
+      ) {
+        return "You win!";
+      } else {
+        return "Computer wins!";
+      }
+    }
+  </script>
+</body>
+</html>
+
