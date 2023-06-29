@@ -1,0 +1,22 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    color: #b616f563;
+}
+
+#game {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+#result {
+    font-size: 20px;
+    margin-top: 20px;
+}
